@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+      background-image: url(https://images.pexels.com/photos/320617/pexels-photo-320617.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+);  
+
+
+}
+
+        h1 {
+            color: #333;
+        }
+
+        #videoContainer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        #videoUrl {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #playButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #playButton:hover {
+            background-color: #0056b3;
+        }
+
+        #videoPlayer {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <h1>URL Video Player</h1>
+        <input type="text" id="videoUrl" placeholder="Enter video URL">
+        <button id="playButton">Play</button>
+        <video id="videoPlayer" controls autoplay></video>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoUrlInput = document.getElementById('videoUrl');
+            const playButton = document.getElementById('playButton');
+            const videoPlayer = document.getElementById('videoPlayer');
+
+            playButton.addEventListener('click', () => {
+                const videoUrl = videoUrlInput.value;
+                if (videoUrl) {
+                    videoPlayer.src = videoUrl;
+                    videoPlayer.load();
+                    videoPlayer.play();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
